@@ -1,0 +1,80 @@
+#reFresh,#startButton{
+  display: flex;
+  border-radius: 10px;
+  transition: 0.5s;
+  vertical-align: middle;
+  text-align: center;
+  
+  left: 10vw;
+  right: 10vw;
+  top: 30vh;
+  bottom: 30vh;
+
+  cursor:pointer;
+  position:fixed;
+  font-family: monospace;
+
+  color: #fff;
+  background: rgb(136, 136, 136);
+}
+#reFresh{
+  display: none;
+}
+#reFresh div, #startButton div{
+  margin: auto;  
+}
+#pre-score{
+  background: rgb(136, 136, 136);
+  display: flex;
+  position: fixed;
+  left: 15vw;
+  right: 15vw;
+  top: 10vh;
+  bottom: 70vh;
+  border-radius: 10px;  
+}
+#score{
+  color: #FFF;
+  margin: auto;
+  text-align: center;
+  position: initial;
+  width: 100%;
+}
+
+
+/*
+  Mobile buttons
+*/
+#buttonsMobile{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 10px;
+
+  background: rgb(136, 136, 136);
+  border-radius: 10px;  
+
+  position: fixed;
+  bottom: 10vh;
+  top: 75vh;
+  left: 10vw;
+  right: 10vw;
+  padding: 10px;
+}
+#buttonsMobile div{
+  color: #000;
+  display: flex;
+  border-radius: 10px;  
+  background: rgb(200, 200, 200);
+  width: 100%;
+  height: 100%;
+}
+#buttonsMobile div:hover{
+  background: rgb(170, 170, 170);
+}
+#buttonsMobile div h1{
+  color: #000;
+  font-size: 1em;
+  margin: auto;
+}
+
