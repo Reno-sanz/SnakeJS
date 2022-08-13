@@ -1,5 +1,6 @@
-let boxButtons = document.getElementById('buttonsMobile');
+document.documentElement.requestFullscreen();
 
+let boxButtons = document.getElementById('buttonsMobile');
 let btnUp = document.getElementById('goUp');
 let btnDown = document.getElementById('goDown');
 let btnLeft = document.getElementById('goLeft');
@@ -34,3 +35,4 @@ function moveLeft() {
     intervalor=setInterval(snakeMovingLeft,speedSnake)
   }
 }
+
