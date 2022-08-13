@@ -47,19 +47,15 @@
 */
 #buttonsMobile{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
   grid-gap: 10px;
 
   background: rgb(136, 136, 136);
   border-radius: 10px;  
 
   position: fixed;
-  bottom: 10vh;
+  bottom: 5vh;
   top: 75vh;
-  left: 10vw;
-  right: 10vw;
-  padding: 10px;
+   padding: 10px;
 }
 #buttonsMobile div{
   color: #000;
@@ -76,5 +72,19 @@
   color: #000;
   font-size: 1em;
   margin: auto;
+}
+.moveV{
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  left: 10vw;
+  right: 52vw;
+}
+.moveH{
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+
+  left: 52vw;
+  right: 10vw;
 }
 
