@@ -234,7 +234,7 @@ function endGame() {
         
         table[newApple.appleColumn][newApple.appleRow].classList.remove("appleBG");
         clearInterval(intervalor);
-        startButton.style.display = "flex";
+        startButton.style.display = "block";
         console.log("endGame --> score: "+score);
         gameStatus=false;
         return false;
