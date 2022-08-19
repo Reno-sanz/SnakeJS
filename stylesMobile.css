@@ -90,10 +90,10 @@
   width: 2em;
 }
 #goUp img{
-  transform:rotate(90deg);
+  transform:rotate(-90deg);
 }
 #goDown img{
-  transform:rotate(-90deg);
+  transform:rotate(90deg);
 }
 #goLeft img{
   transform:rotate(180deg);
