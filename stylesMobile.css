@@ -52,7 +52,7 @@
   background: rgb(60, 60, 60);
   position: fixed;
   bottom: 5vh;
-  top: 75vh;
+  top: 70vh;
   padding: 10px;
 }
 #buttonsMobile div{
@@ -100,4 +100,15 @@
 }
 #goRight img{
   transform:rotate(0deg);
+}
+
+#grid{
+  margin-top: 20vh;
+}
+#startButton{
+  top: 20vh;
+  bottom:30vh;
+}
+#score{
+  margin-top: 2vh;
 }
