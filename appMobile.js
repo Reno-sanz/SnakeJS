@@ -1,5 +1,3 @@
-document.documentElement.requestFullscreen();
-
 let boxButtons = document.getElementById('buttonsMobile');
 let btnUp = document.getElementById('goUp');
 let btnDown = document.getElementById('goDown');

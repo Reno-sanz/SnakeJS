@@ -28,6 +28,7 @@ let startButton = document.querySelector("#startButton");
 let reFreshButton = document.querySelector('#reFresh');
 let scoreLabel = document.querySelector('#score');
 
+let actMove = null;
 let table;
 let snake;
 let numSnakePieces = 4;
@@ -49,13 +50,10 @@ AppendElements();
 
 
 startButton.addEventListener("click",startGame,false);
-reFreshButton.addEventListener("click",function () {
-  reloadPage();
+reFreshButton.addEventListener("click",()=>{
+  document.location.reload(true);
 },false)
 
-function reloadPage() {
-  document.location.reload(true);
-}
 function startGame(){
   score = 0;
   snake = [];
@@ -69,7 +67,8 @@ function startGame(){
     }
     snake.push(snakeCoords);
   }
-  intervalor = setInterval(snakeMovingRight,speedSnake);
+  actMove = snakeMovingRight;
+  intervalor = setInterval(actMove,speedSnake);
   startButton.style.display = "none";
   randApples();
 }
@@ -158,18 +157,22 @@ let goLeft = 'ArrowLeft';
 let goRight = 'ArrowRight';
 let enter = 'Enter';
 document.addEventListener('keydown', (event) => {
-    if (gameStatus==true && event.key == goRight && snake[1].coorX!=snake[0].coorX+1) {
+    if (gameStatus==true && event.key == goRight && snake[1].coorX!=snake[0].coorX+1 && actMove!=snakeMovingRight) {
+      actMove = snakeMovingRight;
       clearInterval(intervalor);
-      intervalor=setInterval(snakeMovingRight,speedSnake)
-    }else if (gameStatus==true && event.key == goLeft && snake[1].coorX!=snake[0].coorX-1) {
+      intervalor = setInterval(actMove,speedSnake);
+    }else if (gameStatus==true && event.key == goLeft && snake[1].coorX!=snake[0].coorX-1 && actMove!=snakeMovingLeft) {
+      actMove = snakeMovingLeft;
       clearInterval(intervalor);
-      intervalor=setInterval(snakeMovingLeft,speedSnake)
-    }else if (gameStatus==true && event.key == goDown && snake[1].coorY!=snake[0].coorY+1) {
+      intervalor = setInterval(actMove,speedSnake);
+    }else if (gameStatus==true && event.key == goDown && snake[1].coorY!=snake[0].coorY+1 && actMove!=snakeMovingDown) {
+      actMove = snakeMovingDown;
       clearInterval(intervalor);
-      intervalor=setInterval(snakeMovingDown,speedSnake)
-    }else if (gameStatus==true && event.key == goUp && snake[1].coorY!=snake[0].coorY-1) {
+      intervalor = setInterval(actMove,speedSnake);
+    }else if (gameStatus==true && event.key == goUp && snake[1].coorY!=snake[0].coorY-1 && actMove!=snakeMovingUp) {
+      actMove = snakeMovingUp;
       clearInterval(intervalor);
-      intervalor=setInterval(snakeMovingUp,speedSnake)
+      intervalor = setInterval(actMove,speedSnake);
     }else if(event.key == enter && gameStatus==false){
       startGame();
     }
@@ -186,7 +189,8 @@ function apple(a,b) {
   this.appleRow = a;
   this.appleColumn = b;
 }
-function randNum(min = 0, max = 9) {
+function randNum() {
+  let min=0,max=9;
     let difference = max - min;
     let rand = Math.random();
     rand = Math.floor( rand * difference);
@@ -195,7 +199,8 @@ function randNum(min = 0, max = 9) {
 }
 
 function randApples() {
-  newApple = new apple(randNum(),randNum());
+  let x=randNum(),y=randNum();
+  newApple = new apple(x,y);
   table[newApple.appleColumn][newApple.appleRow].classList.add("appleBG");
 }
     /*
@@ -229,10 +234,9 @@ function endGame() {
         
         table[newApple.appleColumn][newApple.appleRow].classList.remove("appleBG");
         clearInterval(intervalor);
-        reFreshButton.style.display = "flex";
+        startButton.style.display = "flex";
         console.log("endGame --> score: "+score);
         gameStatus=false;
         return false;
-
       }
 }

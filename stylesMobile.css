@@ -15,7 +15,6 @@
   font-family: monospace;
 
   color: #fff;
-  background: rgb(136, 136, 136);
 }
 #reFresh{
   display: none;
@@ -24,7 +23,6 @@
   margin: auto;  
 }
 #pre-score{
-  background: rgb(136, 136, 136);
   display: flex;
   position: fixed;
   left: 15vw;
@@ -49,27 +47,26 @@
   display: grid;
   grid-gap: 10px;
 
-  background: rgb(136, 136, 136);
   border-radius: 10px;  
 
+  background: rgb(60, 60, 60);
   position: fixed;
   bottom: 5vh;
   top: 75vh;
-   padding: 10px;
+  padding: 10px;
 }
 #buttonsMobile div{
-  color: #000;
   display: flex;
+  border: 1px solid #fff;
   border-radius: 10px;  
-  background: rgb(200, 200, 200);
   width: 100%;
   height: 100%;
 }
 #buttonsMobile div:hover{
-  background: rgb(170, 170, 170);
+  background: rgb(88, 88, 88);
 }
 #buttonsMobile div h1{
-  color: #000;
+  color: #fff;
   font-size: 1em;
   margin: auto;
 }
@@ -87,4 +84,20 @@
   left: 52vw;
   right: 10vw;
 }
-
+.moveH img, .moveV img{
+  margin: auto;
+  height: 2em;
+  width: 2em;
+}
+#goUp img{
+  transform:rotate(90deg);
+}
+#goDown img{
+  transform:rotate(-90deg);
+}
+#goLeft img{
+  transform:rotate(180deg);
+}
+#goRight img{
+  transform:rotate(0deg);
+}
